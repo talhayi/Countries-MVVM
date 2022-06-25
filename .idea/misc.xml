@@ -3,9 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/countriesMVVM/app/src/main/res/layout/activity_main.xml" value="0.37447916666666664" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/countriesMVVM/app/src/main/res/layout/fragment_countries.xml" value="0.37447916666666664" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/countriesMVVM/app/src/main/res/layout/fragment_detail.xml" value="0.37447916666666664" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/countriesMVVM/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/countriesMVVM/app/src/main/res/layout/fragment_countries.xml" value="0.22" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/countriesMVVM/app/src/main/res/layout/fragment_detail.xml" value="0.25" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/countriesMVVM/app/src/main/res/layout/item_country.xml" value="0.25" />
       </map>
     </option>
   </component>

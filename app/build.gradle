@@ -63,6 +63,7 @@ dependencies {
     implementation "androidx.room:room-ktx:$roomVersion"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2"
 
+    implementation "androidx.navigation:navigation-runtime-ktx:$navVersion"
     implementation "androidx.navigation:navigation-fragment-ktx:$navVersion"
     implementation "androidx.navigation:navigation-ui-ktx:$navVersion"
 
@@ -80,6 +81,6 @@ dependencies {
     implementation "com.android.support:palette-v7:$supportVersion"
     implementation "com.android.support:design:$supportVersion"
 
-    implementation "androidx.preference:preference:$preferencesVersion"
+    implementation "androidx.preference:preference-ktx:$preferencesVersion"
 
 }

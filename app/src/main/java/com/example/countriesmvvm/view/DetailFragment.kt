@@ -28,9 +28,11 @@ class DetailFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+/*
         arguments?.let {
             detailUuid = DetailFragmentArgs.fromBundle(it).detailUuid
         }
+
+ */
     }
 }
