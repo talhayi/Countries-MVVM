@@ -4,16 +4,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.example.countriesmvvm.R
 import com.example.countriesmvvm.model.Country
+import com.example.countriesmvvm.view.CountriesFragmentDirections
+import kotlinx.android.synthetic.main.item_country.view.*
 
 class CountryAdapter(val countrylist: ArrayList<Country>): RecyclerView.Adapter<CountryAdapter.CountryViewHolder>() {
 
     class CountryViewHolder(val view: View) : RecyclerView.ViewHolder(view){
-
-        val countryNameTextView: TextView = view.findViewById(R.id.nameTextView)
-        val countryRegionTextView: TextView = view.findViewById(R.id.regionTextView)
 
     }
 
@@ -26,9 +26,13 @@ class CountryAdapter(val countrylist: ArrayList<Country>): RecyclerView.Adapter<
     }
 
     override fun onBindViewHolder(holder: CountryViewHolder, position: Int) {
+        holder.view.nameTextView.text =countrylist[position].countryName
+        holder.view.regionTextView.text = countrylist[position].countryRegion
 
-        holder.countryNameTextView.text = countrylist[position].countryName
-        holder.countryRegionTextView.text = countrylist[position].countryRegion
+        holder.view.setOnClickListener {
+            val action = CountriesFragmentDirections.actionCountriesFragmentToDetailFragment()
+            Navigation.findNavController(it).navigate(action)
+        }
 
     }
 

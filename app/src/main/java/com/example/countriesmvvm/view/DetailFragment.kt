@@ -5,12 +5,19 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import com.example.countriesmvvm.R
+import com.example.countriesmvvm.adapter.CountryAdapter
+import com.example.countriesmvvm.viewmodel.CountriesViewModel
+import com.example.countriesmvvm.viewmodel.DetailViewModel
+import kotlinx.android.synthetic.main.fragment_detail.*
 
 
 class DetailFragment : Fragment() {
 
-    private var detailUuid = 0
+    private lateinit var viewModel : DetailViewModel
+       private var detailUuid = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,11 +35,27 @@ class DetailFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-/*
+
+        viewModel = ViewModelProvider(this).get(DetailViewModel::class.java)
+        viewModel.getDataFromRoom()
+
         arguments?.let {
             detailUuid = DetailFragmentArgs.fromBundle(it).detailUuid
         }
-
- */
+        observeLiveData()
     }
+
+    private fun observeLiveData() {
+
+        viewModel.countryLiveData.observe(viewLifecycleOwner, Observer { country ->
+            country?.let {
+                detailCountryName.text = country.countryName
+                detailCountryCapital.text = country.countryCapital
+                detailCountryRegion.text = country.countryRegion
+                detailCountryCurrency.text = country.countryCurrency
+                detailCountryLanguage.text = country.countryLanguage
+            }
+        })
+    }
+
 }
