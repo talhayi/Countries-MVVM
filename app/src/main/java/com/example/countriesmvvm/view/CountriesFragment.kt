@@ -49,8 +49,20 @@ class CountriesFragment : Fragment() {
         countryRecyclerView.layoutManager = LinearLayoutManager(context)
         countryRecyclerView.adapter = countryAdapter
 
+        swipeRefleshLayout()
         observeLiveData()
 
+    }
+
+    private fun swipeRefleshLayout(){
+
+        swipeRefleshLayout.setOnRefreshListener {
+            countryRecyclerView.visibility = View.GONE
+            countryErrorTextView.visibility = View.GONE
+            countryLoadingProgressBar.visibility = View.VISIBLE
+            viewModel.refreshData()
+            swipeRefleshLayout.isRefreshing = false
+        }
     }
     private fun observeLiveData(){
         viewModel.countries.observe(viewLifecycleOwner, Observer { countries ->
