@@ -8,6 +8,8 @@ import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.example.countriesmvvm.R
 import com.example.countriesmvvm.model.Country
+import com.example.countriesmvvm.util.downloadFromUrl
+import com.example.countriesmvvm.util.placeholderProgressBar
 import com.example.countriesmvvm.view.CountriesFragmentDirections
 import kotlinx.android.synthetic.main.item_country.view.*
 
@@ -33,6 +35,8 @@ class CountryAdapter(val countrylist: ArrayList<Country>): RecyclerView.Adapter<
             val action = CountriesFragmentDirections.actionCountriesFragmentToDetailFragment()
             Navigation.findNavController(it).navigate(action)
         }
+
+        holder.view.imageView.downloadFromUrl(countrylist[position].countryFlagUrl,placeholderProgressBar(holder.view.context))
 
     }
 
