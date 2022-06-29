@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModel
 import com.example.countriesmvvm.model.Country
 import com.example.countriesmvvm.service.CountryAPIService
 import com.example.countriesmvvm.service.CountryDatabase
+import com.example.countriesmvvm.util.CustomSharedPreferences
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.observers.DisposableSingleObserver
@@ -16,6 +17,7 @@ class CountriesViewModel(application: Application) : BaseViewModel(application){
 
     private val countryApiService = CountryAPIService()
     private val disposable = CompositeDisposable()
+    private var customSharedPreferences = CustomSharedPreferences(getApplication())
 
     val countries = MutableLiveData<List<Country>>()
     val countryError = MutableLiveData<Boolean>()
@@ -67,6 +69,7 @@ class CountriesViewModel(application: Application) : BaseViewModel(application){
             }
             showCountries(list)
         }
+        customSharedPreferences.saveTime(System.nanoTime())
 
     }
 }
