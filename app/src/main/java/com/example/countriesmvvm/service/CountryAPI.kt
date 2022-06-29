@@ -6,6 +6,6 @@ import retrofit2.http.GET
 
 interface CountryAPI {
 
-    @GET("atilsamancioglu/IA19-DataSetCountries/master/countrydataset.json")
+    @GET("CountriesMVVM/countries.json")
     fun getCountries():Single<List<Country>>
 }

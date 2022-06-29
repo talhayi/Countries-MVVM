@@ -9,6 +9,8 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.countriesmvvm.R
 import com.example.countriesmvvm.adapter.CountryAdapter
+import com.example.countriesmvvm.util.downloadFromUrl
+import com.example.countriesmvvm.util.placeholderProgressBar
 import com.example.countriesmvvm.viewmodel.CountriesViewModel
 import com.example.countriesmvvm.viewmodel.DetailViewModel
 import kotlinx.android.synthetic.main.fragment_detail.*
@@ -36,12 +38,13 @@ class DetailFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        viewModel = ViewModelProvider(this).get(DetailViewModel::class.java)
-        viewModel.getDataFromRoom()
-
         arguments?.let {
             detailUuid = DetailFragmentArgs.fromBundle(it).detailUuid
         }
+
+        viewModel = ViewModelProvider(this).get(DetailViewModel::class.java)
+        viewModel.getDataFromRoom(detailUuid)
+
         observeLiveData()
     }
 
@@ -54,6 +57,11 @@ class DetailFragment : Fragment() {
                 detailCountryRegion.text = country.countryRegion
                 detailCountryCurrency.text = country.countryCurrency
                 detailCountryLanguage.text = country.countryLanguage
+                context?.let {
+                    detailCountryImage.downloadFromUrl(country.countryFlagUrl, placeholderProgressBar(it))
+
+                }
+
             }
         })
     }

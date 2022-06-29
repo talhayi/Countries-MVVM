@@ -93,4 +93,9 @@ class CountriesViewModel(application: Application) : BaseViewModel(application){
         customSharedPreferences.saveTime(System.nanoTime())
 
     }
+
+    override fun onCleared() {
+        super.onCleared()
+        disposable.clear()
+    }
 }

@@ -3,13 +3,15 @@
     package="com.example.countriesmvvm">
     <uses-permission android:name="android.permission.INTERNET"></uses-permission>
 
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.CountriesMVVM">
+        android:theme="@style/Theme.CountriesMVVM"
+        android:usesCleartextTraffic="true">
         <activity
             android:name=".view.MainActivity"
             android:exported="true">
@@ -19,6 +21,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
     </application>
 
 </manifest>

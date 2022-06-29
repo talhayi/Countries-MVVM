@@ -3,7 +3,6 @@ package com.example.countriesmvvm.adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.example.countriesmvvm.R
@@ -32,7 +31,7 @@ class CountryAdapter(val countrylist: ArrayList<Country>): RecyclerView.Adapter<
         holder.view.regionTextView.text = countrylist[position].countryRegion
 
         holder.view.setOnClickListener {
-            val action = CountriesFragmentDirections.actionCountriesFragmentToDetailFragment()
+            val action = CountriesFragmentDirections.actionCountriesFragmentToDetailFragment(countrylist[position].uuid)
             Navigation.findNavController(it).navigate(action)
         }
 
