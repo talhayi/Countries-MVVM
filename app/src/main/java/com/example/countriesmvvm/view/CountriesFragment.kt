@@ -56,7 +56,7 @@ class CountriesFragment : Fragment() {
             countryRecyclerView.visibility = View.GONE
             countryErrorTextView.visibility = View.GONE
             countryLoadingProgressBar.visibility = View.VISIBLE
-            viewModel.refreshData()
+            viewModel.refreshFromAPI()
             swipeRefleshLayout.isRefreshing = false
         }
     }
