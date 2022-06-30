@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="detailCountry"
+            type="com.example.countriesmvvm.model.Country"/>
+
+    </data>
 <RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -13,7 +19,8 @@
         android:layout_alignParentTop="true"
         android:scaleType="fitCenter"
         android:minHeight="200dp"
-        android:paddingTop="10dp">
+        android:paddingTop="10dp"
+        android:downloadUrl="@{detailCountry.countryFlagUrl}">
     </ImageView>
 
     <TextView
@@ -26,9 +33,9 @@
         android:layout_marginTop="8sp"
         android:layout_marginEnd="8sp"
         android:layout_marginBottom="8sp"
-        android:text="Country Name"
+        android:text="@{detailCountry.countryName}"
         android:textSize="20sp"
-        android:textStyle="bold"></TextView>
+        android:textStyle="bold"/>
 
     <TextView
         android:id="@+id/detailCountryCapital"
@@ -40,8 +47,8 @@
         android:layout_marginTop="8sp"
         android:layout_marginEnd="8sp"
         android:layout_marginBottom="8sp"
-        android:text="Country Capital"
-        android:textSize="16sp"></TextView>
+        android:text="@{detailCountry.countryCapital}"
+        android:textSize="16sp"/>
 
     <TextView
         android:id="@+id/detailCountryRegion"
@@ -53,8 +60,8 @@
         android:layout_marginTop="8sp"
         android:layout_marginEnd="8sp"
         android:layout_marginBottom="8sp"
-        android:text="Capital Region"
-        android:textSize="16sp"></TextView>
+        android:text="@{detailCountry.countryRegion}"
+        android:textSize="16sp"/>
 
     <TextView
         android:id="@+id/detailCountryCurrency"
@@ -66,8 +73,8 @@
         android:layout_marginTop="8sp"
         android:layout_marginEnd="8sp"
         android:layout_marginBottom="8sp"
-        android:text="Capital Currency"
-        android:textSize="16sp"></TextView>
+        android:text="@{detailCountry.countryCurrency}"
+        android:textSize="16sp"/>
 
     <TextView
         android:id="@+id/detailCountryLanguage"
@@ -79,8 +86,8 @@
         android:layout_marginTop="8sp"
         android:layout_marginEnd="8sp"
         android:layout_marginBottom="8sp"
-        android:text="Capital Language"
-        android:textSize="16sp"></TextView>
+        android:text="@{detailCountry.countryLanguage}"
+        android:textSize="16sp"/>
 
 </RelativeLayout>
 
