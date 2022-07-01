@@ -1,5 +1,5 @@
-- In this application users can see flag, name and  region of countries in Home Page
-- Clicking on the country is showed the details of that country
+- In this application users can see the flag, name and  region of countries in Home Page
+- When clicking on the country is showed the details of that country
 
 
 - ## I used MVVM 
