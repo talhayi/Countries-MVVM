@@ -57,6 +57,7 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 
     implementation "android.arch.lifecycle:extensions:$lifeCycleExtensionVersion"
+    implementation "com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.2"
 
     implementation "androidx.room:room-runtime:$roomVersion"
     implementation "androidx.legacy:legacy-support-v4:1.0.0"
