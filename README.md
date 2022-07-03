@@ -2,9 +2,7 @@
 - When clicking on the country is showed the details of that country
 
 
-- ## I used MVVM 
-- ## I used swiperefreshlayout
-- ## I used Databinding
+- ## I used MVVM, Databinding, swiperefreshlayout
 
 - ## Retrofit Library is used for network requests
 - ## Glide Library is used to display images
