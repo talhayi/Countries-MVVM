@@ -1,4 +1,4 @@
-- #### This project is written with Kotlin. MVVM architecture and Databinding are used. 
+- #### MVVM architecture and Databinding are used. 
 - #### In this application users can see the flag, name and  region of countries in Home Page
 - #### When clicking on the country is showed the details of that country
 
